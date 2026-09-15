@@ -241,3 +241,28 @@ siteNav.querySelectorAll("a").forEach((link) => {
   render(0);
   restartTimer();
 })();
+
+// 사업영역 이동탭: 스크롤 위치에 따라 현재 구간 탭을 활성화
+(function () {
+  const tabs = Array.from(document.querySelectorAll(".biz-tabs a"));
+  if (tabs.length === 0) return;
+
+  const targets = tabs
+    .map((tab) => document.querySelector(tab.getAttribute("href")))
+    .filter(Boolean);
+  if (targets.length === 0) return;
+
+  function setActive() {
+    const scrollPos = window.scrollY + 140; // 헤더+탭 높이만큼 여유
+    let current = targets[0];
+    targets.forEach((el) => {
+      if (el.offsetTop <= scrollPos) current = el;
+    });
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle("active", targets[i] === current);
+    });
+  }
+
+  setActive();
+  window.addEventListener("scroll", setActive, { passive: true });
+})();

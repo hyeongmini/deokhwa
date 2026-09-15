@@ -199,6 +199,35 @@ a { color: inherit; text-decoration: none; }
 
 /* 소개 페이지: 개요/CEO인사말/연혁/오시는길이 흰색-기본색 밴드로 번갈아 이어짐 */
 .section-about, .section-business, .section-people, .section-welfare { background: var(--bg); padding: 0; }
+
+/* 사업영역 이동탭 (인성 홈페이지 "연구개발" 탭 구도 참고) */
+.biz-tabs {
+  position: sticky;
+  top: 63px;
+  z-index: 40;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.biz-tabs a {
+  text-align: center;
+  padding: 20px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.biz-tabs a:hover { color: var(--ink); }
+.biz-tabs a.active { color: var(--accent-dark); border-bottom-color: var(--accent); }
+
+@media (max-width: 640px) {
+  .biz-tabs a { font-size: 13px; padding: 16px 6px; }
+}
 .section-title-plain { font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 24px; }
 .section-band {
   position: relative;
@@ -423,6 +452,25 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 
 @media (max-width: 640px) {
   .product-grid { grid-template-columns: 1fr; }
+}
+
+/* 아스팔트 포장의 구성: 참고 도면(좌) + 제품 카드 세로 스택(우), 높이 일치 */
+.pavement-intro { display: flex; gap: 32px; align-items: stretch; }
+.pavement-ref-photo {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+.pavement-ref-photo img { width: 100%; height: auto; display: block; }
+.product-stack { flex: 1 1 50%; display: flex; flex-direction: column; gap: 16px; }
+.product-stack .product-card { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+@media (max-width: 760px) {
+  .pavement-intro { flex-direction: column; }
 }
 
 /* ---------- 순환상온아스콘 하이라이트 ---------- */

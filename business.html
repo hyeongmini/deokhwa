@@ -44,19 +44,30 @@
     </div>
   </section>
 
+  <nav class="biz-tabs" aria-label="사업영역 섹션 이동">
+    <a href="#biz-ascon">ASCON</a>
+    <a href="#biz-process">PROCESS</a>
+    <a href="#biz-cert">CERTIFICATION</a>
+  </nav>
+
   <section class="section section-business">
 
-    <div class="section-band band-white">
+    <div class="section-band band-white" id="biz-ascon">
       <div class="section-band-inner">
-        <h3 class="section-title-plain">제품 안내</h3>
-        <div class="product-grid">
-          <div class="product-card">
-            <h4>일반가열아스콘 <em>Hot Mix Asphalt</em></h4>
-            <p>신규 골재와 아스팔트를 가열·혼합하여 생산하는 기본 아스팔트 혼합물입니다. 기층용·중간층용·표층용으로 생산됩니다.</p>
-          </div>
-          <div class="product-card">
-            <h4>순환가열아스콘 <em>Recycled Hot Mix Asphalt</em></h4>
-            <p>폐아스콘 순환골재를 가열 재생하여 생산하는 자원순환형 아스팔트 혼합물입니다.</p>
+        <h3 class="section-title-plain">아스팔트 포장의 구성</h3>
+        <div class="pavement-intro">
+          <figure class="pavement-ref-photo">
+            <img src="img/pavement-reference.png" alt="아스팔트 포장의 구성: 포장(표층·중간층/기층/보조기층·동상방지층/노상)과 노체, 아스팔트 혼합물 표시">
+          </figure>
+          <div class="product-stack">
+            <div class="product-card">
+              <h4>일반가열아스콘 <em>Hot Mix Asphalt</em></h4>
+              <p>신규 골재와 아스팔트를 가열·혼합하여 생산하는 기본 아스팔트 혼합물입니다. 기층용·중간층용·표층용으로 생산됩니다.</p>
+            </div>
+            <div class="product-card">
+              <h4>순환가열아스콘 <em>Recycled Hot Mix Asphalt</em></h4>
+              <p>폐아스콘 순환골재를 가열 재생하여 생산하는 자원순환형 아스팔트 혼합물입니다.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -199,7 +210,29 @@
       </div>
     </div>
 
-    <div class="section-band band-white">
+    <div class="section-band band-white" id="biz-process">
+      <div class="section-band-inner">
+      <h3 class="section-title-plain">아스콘 생산공정</h3>
+      <div class="process-flow" aria-label="아스콘 생산공정 흐름도">
+        <div class="process-step">콜드빈<span>골재 투입</span></div>
+        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
+        <div class="process-step">드라이어<span>골재 건조·가열</span></div>
+        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
+        <div class="process-step">핫엘리베이터<span>가열골재 이송</span></div>
+        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
+        <div class="process-step">핫스크린<span>입도별 선별</span></div>
+        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
+        <div class="process-step">계량장치<span>배합비 계량</span></div>
+        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
+        <div class="process-step">믹서<span>아스팔트·채움재 혼합</span></div>
+        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
+        <div class="process-step">아스팔트 혼합물 사일로<span>저장·출하</span></div>
+      </div>
+      <p class="process-side-note">※ 1차·2차 집진장치(백하우스)에서 회수한 채움재(더스트)는 계량 단계에 재투입되고, 아스팔트 탱크에서 가열된 아스팔트는 믹서에 별도 투입됩니다.</p>
+      </div>
+    </div>
+
+    <div class="section-band band-base" id="biz-cert">
       <div class="section-band-inner">
       <h3 class="section-title-plain">인증 및 허가현황</h3>
       <div class="cert-grid">
@@ -232,68 +265,6 @@
           </div>
         </div>
       </div>
-      </div>
-    </div>
-
-    <div class="section-band band-base">
-      <div class="section-band-inner">
-      <h3 class="section-title-plain">아스팔트 포장의 구성</h3>
-      <div class="pavement-block">
-        <div class="pavement-visual-wrap">
-          <div class="pavement-bracket-left" aria-hidden="true"><span>포장</span></div>
-          <div class="pavement-visual" aria-hidden="true">
-            <div class="pavement-layer layer-surface"><span>표층(중간층)<em>아스팔트 혼합물</em></span></div>
-            <div class="pavement-layer layer-base"><span>기층</span></div>
-            <div class="pavement-layer layer-subbase"><span>보조기층(동상방지층)</span></div>
-            <div class="pavement-layer layer-subgrade"><span>노상</span></div>
-            <div class="pavement-layer layer-roadbed"><span>노체</span></div>
-          </div>
-        </div>
-        <div class="pavement-table">
-          <div class="pavement-row">
-            <div class="pavement-name">표층 · 중간층<em>Surface &amp; Binder Course</em></div>
-            <p class="pavement-desc">차량 하중이 직접 닿는 최상부 층. 미끄럼 저항과 평탄성을 확보하고 빗물 침투를 막습니다.</p>
-          </div>
-          <div class="pavement-row">
-            <div class="pavement-name">기층<em>Base Course</em></div>
-            <p class="pavement-desc">굵은 골재를 사용해 상부 하중을 지지하고 도로 구조의 뼈대 역할을 합니다.</p>
-          </div>
-          <div class="pavement-row">
-            <div class="pavement-name">보조기층 · 동상방지층<em>Subbase &amp; Anti-Frost Layer</em></div>
-            <p class="pavement-desc">상부 하중을 노상으로 고르게 분산시키고, 겨울철 동상 현상을 방지합니다.</p>
-          </div>
-          <div class="pavement-row">
-            <div class="pavement-name">노상<em>Subgrade</em></div>
-            <p class="pavement-desc">다져진 도로 부지의 최상부 지반으로, 포장 구조 전체를 지지합니다.</p>
-          </div>
-          <div class="pavement-row">
-            <div class="pavement-name">노체<em>Roadbed</em></div>
-            <p class="pavement-desc">도로를 쌓아 올리는 최하부 성토층으로, 도로의 최종 기초가 됩니다.</p>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <div class="section-band band-white">
-      <div class="section-band-inner">
-      <h3 class="section-title-plain">아스콘 생산공정</h3>
-      <div class="process-flow" aria-label="아스콘 생산공정 흐름도">
-        <div class="process-step">콜드빈<span>골재 투입</span></div>
-        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
-        <div class="process-step">드라이어<span>골재 건조·가열</span></div>
-        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
-        <div class="process-step">핫엘리베이터<span>가열골재 이송</span></div>
-        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
-        <div class="process-step">핫스크린<span>입도별 선별</span></div>
-        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
-        <div class="process-step">계량장치<span>배합비 계량</span></div>
-        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
-        <div class="process-step">믹서<span>아스팔트·채움재 혼합</span></div>
-        <svg class="process-arrow" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h22M18 2l6 5-6 5"/></svg>
-        <div class="process-step">아스팔트 혼합물 사일로<span>저장·출하</span></div>
-      </div>
-      <p class="process-side-note">※ 1차·2차 집진장치(백하우스)에서 회수한 채움재(더스트)는 계량 단계에 재투입되고, 아스팔트 탱크에서 가열된 아스팔트는 믹서에 별도 투입됩니다.</p>
       </div>
     </div>
 
