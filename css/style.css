@@ -468,6 +468,31 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .feature-table td { color: #fff; font-weight: 600; }
 .feature-table td.pass { color: var(--accent); }
 
+/* 순환상온아스콘 시험결과 (EcoCold / SuperCold 비교, 카드+막대 그래프 자체 제작) */
+.test-results { margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.14); }
+.test-results-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 18px; }
+.test-results-title span { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,.5); }
+.test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.test-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 20px 22px; }
+.test-name { font-size: 15px; font-weight: 700; color: #fff; }
+.test-name em { display: block; font-style: normal; font-weight: 500; font-size: 12px; color: rgba(255,255,255,.55); margin-top: 2px; }
+.test-req { font-size: 12px; color: rgba(255,255,255,.55); margin: 8px 0 12px; }
+.test-sub { font-size: 12px; color: rgba(255,255,255,.6); margin: 14px 0 6px; }
+.test-sub:first-of-type { margin-top: 0; }
+.test-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.test-bar-row:last-child { margin-bottom: 0; }
+.test-label { flex: 0 0 76px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); }
+.test-bar { flex: 1 1 auto; height: 8px; background: rgba(255,255,255,.12); border-radius: 4px; overflow: hidden; }
+.test-bar-fill { height: 100%; background: rgba(255,255,255,.4); border-radius: 4px; }
+.test-bar-fill.accent2 { background: var(--accent); }
+.test-value { flex: 0 0 auto; font-size: 13px; font-weight: 700; color: #fff; min-width: 62px; text-align: right; }
+.test-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.45); }
+
+@media (max-width: 640px) {
+  .test-grid { grid-template-columns: 1fr; }
+  .test-label { flex-basis: 66px; }
+}
+
 @media (max-width: 640px) {
   .feature-points { grid-template-columns: 1fr; }
   .feature-table { font-size: 12px; }
@@ -492,10 +517,29 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .cert-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- 아스팔트 포장 단면 다이어그램 ---------- */
+/* ---------- 아스팔트 포장 단면 다이어그램 (덕화실업 제공 참고 도면 기준: 포장=표층~노상, 노체는 별도) ---------- */
 .pavement-block { display: flex; gap: 32px; align-items: stretch; }
+.pavement-visual-wrap { flex: 1 1 40%; display: flex; gap: 10px; }
+.pavement-bracket-left { flex-shrink: 0; width: 26px; display: flex; align-items: flex-start; }
+.pavement-bracket-left > span {
+  height: 81%;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px 0 2px;
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px 0 0 8px;
+  writing-mode: vertical-rl;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  letter-spacing: .15em;
+}
 .pavement-visual {
-  flex: 1 1 40%;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -512,7 +556,9 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   font-weight: 700;
   letter-spacing: .04em;
   text-shadow: 0 1px 3px rgba(0,0,0,.45);
+  text-align: center;
 }
+.pavement-layer span em { display: block; font-style: normal; font-weight: 500; font-size: 11px; letter-spacing: normal; margin-top: 2px; opacity: .8; }
 .layer-surface { flex: 11; background: repeating-linear-gradient(135deg, #2b2b2b 0 8px, #1f1f1f 8px 16px); }
 .layer-base {
   flex: 15;
@@ -561,7 +607,9 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 
 @media (max-width: 860px) {
   .pavement-block { flex-direction: column; }
+  .pavement-visual-wrap { flex: none; }
   .pavement-visual { flex: none; height: 220px; flex-direction: row; }
+  .pavement-bracket-left { display: none; }
 }
 
 /* ---------- 생산공정 흐름도 (자체 제작) ---------- */
