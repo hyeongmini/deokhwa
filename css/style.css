@@ -725,6 +725,26 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   color: var(--ink-soft);
 }
 
+/* 순환 상온 아스팔트 혼합물 생산 및 시공 순서 (사진 + 화살표) */
+.photo-flow { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 6px; margin-top: 8px; }
+.photo-step { width: 150px; text-align: center; }
+.photo-step figure {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.photo-step img { width: 100%; height: 100px; object-fit: cover; display: block; }
+.photo-step p { margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--ink-soft); line-height: 1.4; }
+.process-arrow { flex-shrink: 0; width: 24px; height: 14px; color: var(--accent-dark); margin-top: 42px; }
+
+@media (max-width: 760px) {
+  .photo-flow { gap: 4px; }
+  .photo-step { width: 100px; }
+  .photo-step img { height: 72px; }
+  .photo-step p { font-size: 11px; }
+  .process-arrow { transform: rotate(90deg); margin-top: 0; width: 18px; }
+}
+
 /* ---------- People / policy values ---------- */
 .section-people { background: var(--bg); }
 .value-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
