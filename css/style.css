@@ -200,35 +200,40 @@ a { color: inherit; text-decoration: none; }
 /* 소개 페이지: 개요/CEO인사말/연혁/오시는길이 흰색-기본색 밴드로 번갈아 이어짐 */
 .section-about, .section-business, .section-people, .section-welfare { background: var(--bg); padding: 0; }
 
-/* 사업영역 이동탭 (인성 홈페이지 "연구개발" 탭 구도 참고) */
+/* 사업영역 이동탭 (인성 홈페이지 "연구개발" 탭 구도 참고) - 가운데 정렬, 클릭 시 화면 전환 */
 .biz-tabs {
   position: sticky;
   top: 63px;
   z-index: 40;
   background: var(--card-bg);
   border-bottom: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: var(--max);
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
-.biz-tabs a {
+.biz-tabs button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+  cursor: pointer;
   text-align: center;
-  padding: 20px 12px;
+  padding: 20px 28px;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: .04em;
   color: var(--ink-soft);
-  border-bottom: 3px solid transparent;
   transition: color .15s, border-color .15s;
 }
-.biz-tabs a:hover { color: var(--ink); }
-.biz-tabs a.active { color: var(--accent-dark); border-bottom-color: var(--accent); }
+.biz-tabs button:hover { color: var(--ink); }
+.biz-tabs button.active { color: var(--accent-dark); border-bottom-color: var(--accent); }
 
 @media (max-width: 640px) {
-  .biz-tabs a { font-size: 13px; padding: 16px 6px; }
+  .biz-tabs button { font-size: 13px; padding: 16px 14px; }
 }
-.section-title-plain { font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 24px; }
+.section-title-plain { font-size: 28px; font-weight: 600; color: var(--ink); margin-bottom: 24px; }
 .section-band {
   position: relative;
   left: 50%;
@@ -454,24 +459,27 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* 아스팔트 포장의 구성: 참고 도면(좌) + 제품 카드 세로 스택(우), 높이 일치 */
-.pavement-intro { display: flex; gap: 32px; align-items: stretch; }
+/* 아스팔트 포장의 구성: 참고 도면 + 제품 카드 (우측 정렬, 한 줄) */
 .pavement-ref-photo {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: center;
+  max-width: 480px;
+  margin: 0 auto 28px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
 }
 .pavement-ref-photo img { width: 100%; height: auto; display: block; }
-.product-stack { flex: 1 1 50%; display: flex; flex-direction: column; gap: 16px; }
-.product-stack .product-card { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.product-row-right { display: flex; justify-content: flex-end; gap: 16px; }
+.product-row-right .product-card { flex: 0 1 320px; }
 
-@media (max-width: 760px) {
-  .pavement-intro { flex-direction: column; }
+@media (max-width: 640px) {
+  .product-row-right { flex-direction: column; }
+  .product-row-right .product-card { flex: 1 1 auto; }
 }
+
+/* 인증현황 탭: 인증서 이미지 */
+.cert-photo { margin-bottom: 28px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+.cert-photo img { width: 100%; height: auto; display: block; }
 
 /* ---------- 순환상온아스콘 하이라이트 ---------- */
 .feature-panel {

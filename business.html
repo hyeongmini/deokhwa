@@ -44,38 +44,32 @@
     </div>
   </section>
 
-  <nav class="biz-tabs" aria-label="사업영역 섹션 이동">
-    <a href="#biz-ascon">ASCON</a>
-    <a href="#biz-process">PROCESS</a>
-    <a href="#biz-cert">CERTIFICATION</a>
+  <nav class="biz-tabs" aria-label="사업영역 탭">
+    <button type="button" class="active" data-tab="ascon">아스콘</button>
+    <button type="button" data-tab="process">생산과정</button>
+    <button type="button" data-tab="cert">인증현황</button>
   </nav>
 
   <section class="section section-business">
 
-    <div class="section-band band-white" id="biz-ascon">
+    <div class="section-band tab-panel band-white" id="tab-ascon">
       <div class="section-band-inner">
         <h3 class="section-title-plain">아스팔트 포장의 구성</h3>
-        <div class="pavement-intro">
-          <figure class="pavement-ref-photo">
-            <img src="img/pavement-reference.png" alt="아스팔트 포장의 구성: 포장(표층·중간층/기층/보조기층·동상방지층/노상)과 노체, 아스팔트 혼합물 표시">
-          </figure>
-          <div class="product-stack">
-            <div class="product-card">
-              <h4>일반가열아스콘 <em>Hot Mix Asphalt</em></h4>
-              <p>신규 골재와 아스팔트를 가열·혼합하여 생산하는 기본 아스팔트 혼합물입니다. 기층용·중간층용·표층용으로 생산됩니다.</p>
-            </div>
-            <div class="product-card">
-              <h4>순환가열아스콘 <em>Recycled Hot Mix Asphalt</em></h4>
-              <p>폐아스콘 순환골재를 가열 재생하여 생산하는 자원순환형 아스팔트 혼합물입니다.</p>
-            </div>
+        <figure class="pavement-ref-photo">
+          <img src="img/pavement-reference.png" alt="아스팔트 포장의 구성: 포장(표층·중간층/기층/보조기층·동상방지층/노상)과 노체, 아스팔트 혼합물 표시">
+        </figure>
+        <div class="product-row-right">
+          <div class="product-card">
+            <h4>일반가열아스콘 <em>Hot Mix Asphalt</em></h4>
+            <p>신규 골재와 아스팔트를 가열·혼합하여 생산하는 기본 아스팔트 혼합물입니다. 기층용·중간층용·표층용으로 생산됩니다.</p>
+          </div>
+          <div class="product-card">
+            <h4>순환가열아스콘 <em>Recycled Hot Mix Asphalt</em></h4>
+            <p>폐아스콘 순환골재를 가열 재생하여 생산하는 자원순환형 아스팔트 혼합물입니다.</p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="section-band band-base">
-      <div class="section-band-inner">
-      <h3 class="section-title-plain">순환상온아스콘</h3>
+      <h3 class="section-title-plain pavement-title-lg">순환상온아스콘</h3>
       <div class="feature-panel">
         <div class="feature-panel-head">
           <h4>순환 상온 아스팔트 콘크리트</h4>
@@ -210,7 +204,7 @@
       </div>
     </div>
 
-    <div class="section-band band-white" id="biz-process">
+    <div class="section-band tab-panel band-white" id="tab-process" hidden>
       <div class="section-band-inner">
       <h3 class="section-title-plain">아스콘 생산공정</h3>
       <div class="process-flow" aria-label="아스콘 생산공정 흐름도">
@@ -232,9 +226,12 @@
       </div>
     </div>
 
-    <div class="section-band band-base" id="biz-cert">
+    <div class="section-band tab-panel band-base" id="tab-cert" hidden>
       <div class="section-band-inner">
       <h3 class="section-title-plain">인증 및 허가현황</h3>
+      <figure class="cert-photo">
+        <img src="img/certificates.jpg" alt="관련 인증서 및 성적서: 환경표지 인증서, TEST REPORT, 직접생산확인증명서, 조달청 물품 식별번호 26124939">
+      </figure>
       <div class="cert-grid">
         <div class="cert-item">
           <span class="cert-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M24 4 6 12v10c0 11 7.5 17.5 18 22 10.5-4.5 18-11 18-22V12L24 4Z"/><path d="M16 24l6 6 12-13" stroke-linecap="round"/></svg></span>

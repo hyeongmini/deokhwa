@@ -242,27 +242,25 @@ siteNav.querySelectorAll("a").forEach((link) => {
   restartTimer();
 })();
 
-// 사업영역 이동탭: 스크롤 위치에 따라 현재 구간 탭을 활성화
+// 사업영역 이동탭: 클릭한 탭의 화면만 보여주는 개별 탭 전환
 (function () {
-  const tabs = Array.from(document.querySelectorAll(".biz-tabs a"));
+  const tabs = Array.from(document.querySelectorAll(".biz-tabs button"));
   if (tabs.length === 0) return;
 
-  const targets = tabs
-    .map((tab) => document.querySelector(tab.getAttribute("href")))
-    .filter(Boolean);
-  if (targets.length === 0) return;
+  const panels = tabs.map((tab) => document.getElementById("tab-" + tab.dataset.tab)).filter(Boolean);
 
-  function setActive() {
-    const scrollPos = window.scrollY + 140; // 헤더+탭 높이만큼 여유
-    let current = targets[0];
-    targets.forEach((el) => {
-      if (el.offsetTop <= scrollPos) current = el;
-    });
-    tabs.forEach((tab, i) => {
-      tab.classList.toggle("active", targets[i] === current);
+  function activate(name) {
+    tabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.tab === name));
+    panels.forEach((panel) => {
+      panel.hidden = panel.id !== "tab-" + name;
     });
   }
 
-  setActive();
-  window.addEventListener("scroll", setActive, { passive: true });
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      activate(tab.dataset.tab);
+      const tabsBar = document.querySelector(".biz-tabs");
+      if (tabsBar) tabsBar.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+  });
 })();
