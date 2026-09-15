@@ -468,29 +468,62 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .feature-table td { color: #fff; font-weight: 600; }
 .feature-table td.pass { color: var(--accent); }
 
-/* 순환상온아스콘 시험결과 (EcoCold / SuperCold 비교, 카드+막대 그래프 자체 제작) */
+/* 순환상온아스콘 시험결과 (EcoCold / SuperCold 비교, 세로 막대그래프 + 사진, 자체 제작) */
 .test-results { margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.14); }
 .test-results-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 18px; }
 .test-results-title span { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,.5); }
 .test-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .test-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 20px 22px; }
-.test-name { font-size: 15px; font-weight: 700; color: #fff; }
+.test-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; }
 .test-name em { display: block; font-style: normal; font-weight: 500; font-size: 12px; color: rgba(255,255,255,.55); margin-top: 2px; }
-.test-req { font-size: 12px; color: rgba(255,255,255,.55); margin: 8px 0 12px; }
-.test-sub { font-size: 12px; color: rgba(255,255,255,.6); margin: 14px 0 6px; }
-.test-sub:first-of-type { margin-top: 0; }
-.test-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.test-bar-row:last-child { margin-bottom: 0; }
-.test-label { flex: 0 0 76px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.75); }
-.test-bar { flex: 1 1 auto; height: 8px; background: rgba(255,255,255,.12); border-radius: 4px; overflow: hidden; }
-.test-bar-fill { height: 100%; background: rgba(255,255,255,.4); border-radius: 4px; }
-.test-bar-fill.accent2 { background: var(--accent); }
-.test-value { flex: 0 0 auto; font-size: 13px; font-weight: 700; color: #fff; min-width: 62px; text-align: right; }
+.test-sub { font-size: 12px; color: rgba(255,255,255,.55); margin-top: 12px; }
+
+.test-card-body { display: flex; align-items: flex-end; gap: 16px; }
+
+.vbar-chart {
+  position: relative;
+  flex: 1 1 auto;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 0 4px;
+  border-left: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.vbar-chart-wide { gap: 6px; }
+.vbar-req-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed rgba(255,150,80,.7);
+}
+.vbar-req-line span {
+  position: absolute;
+  top: -16px;
+  left: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,180,120,.9);
+  white-space: nowrap;
+}
+.vbar-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; flex: 1 1 0; min-width: 0; }
+.vbar-value { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 6px; white-space: nowrap; }
+.vbar { width: 60%; max-width: 34px; background: rgba(255,255,255,.4); border-radius: 4px 4px 0 0; }
+.vbar.accent2 { background: var(--accent); }
+.vbar-name { margin-top: 8px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.7); text-align: center; line-height: 1.3; }
+
+.test-photo-side { flex: 0 0 96px; width: 96px; border-radius: 10px; overflow: hidden; background: #fff; }
+.test-photo-side img { width: 100%; height: 150px; object-fit: cover; display: block; }
+
 .test-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.45); }
 
 @media (max-width: 640px) {
   .test-grid { grid-template-columns: 1fr; }
-  .test-label { flex-basis: 66px; }
+  .test-photo-side { flex-basis: 76px; width: 76px; }
+  .test-photo-side img { height: 130px; }
+  .vbar-chart { height: 130px; }
 }
 
 @media (max-width: 640px) {
