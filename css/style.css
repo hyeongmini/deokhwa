@@ -49,8 +49,8 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 24px;
 }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-mark { width: 34px; height: 34px; }
-.logo-mark svg { width: 100%; height: 100%; }
+.logo-mark { width: 34px; height: 34px; flex-shrink: 0; }
+.logo-mark svg, .logo-mark img { width: 100%; height: 100%; object-fit: contain; }
 .logo-text { font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif; font-size: 21px; font-weight: 500; letter-spacing: -0.01em; }
 .logo-text em { font-style: normal; font-weight: 600; color: var(--ink-soft); margin-left: 2px; }
 
@@ -210,6 +210,13 @@ a { color: inherit; text-decoration: none; }
 .overview-text strong { color: var(--ink); }
 .overview-photo { flex: 1 1 45%; border-radius: 16px; overflow: hidden; box-shadow: 0 16px 40px rgba(15,30,25,.14); }
 .overview-photo img { width: 100%; height: 100%; object-fit: cover; }
+.overview-photo-sketch {
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: none;
+  padding: 12px;
+}
+.overview-photo-sketch img { object-fit: contain; }
 
 @media (max-width: 760px) {
   .overview-body { flex-direction: column-reverse; gap: 24px; }
