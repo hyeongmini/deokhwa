@@ -233,7 +233,13 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 640px) {
   .biz-tabs button { font-size: 13px; padding: 16px 14px; }
 }
-.section-title-plain { font-size: 28px; font-weight: 600; color: var(--ink); margin-bottom: 24px; }
+.section-title-plain {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
 .section-band {
   position: relative;
   left: 50%;
@@ -459,22 +465,23 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* 아스팔트 포장의 구성: 참고 도면 + 제품 카드 (우측 정렬, 한 줄) */
+/* 아스팔트 포장의 구성: 좌측 참고 도면 / 우측 제품 카드, 반반 분할 + 높이 일치 */
+.pavement-intro { display: flex; gap: 32px; align-items: stretch; }
 .pavement-ref-photo {
-  max-width: 480px;
-  margin: 0 auto 28px;
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 24px;
 }
 .pavement-ref-photo img { width: 100%; height: auto; display: block; }
-.product-row-right { display: flex; justify-content: flex-end; gap: 16px; }
-.product-row-right .product-card { flex: 0 1 320px; }
+.product-stack { flex: 1 1 50%; display: flex; flex-direction: column; gap: 16px; }
+.product-stack .product-card { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 
-@media (max-width: 640px) {
-  .product-row-right { flex-direction: column; }
-  .product-row-right .product-card { flex: 1 1 auto; }
+@media (max-width: 760px) {
+  .pavement-intro { flex-direction: column; }
 }
 
 /* 인증현황 탭: 인증서 이미지 */
