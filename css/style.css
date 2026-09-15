@@ -723,23 +723,28 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   margin-top: 14px;
   font-size: 14px;
   color: var(--ink-soft);
+  text-align: center;
 }
 
 /* 순환 상온 아스팔트 혼합물 생산 및 시공 순서 (사진 + 화살표, 한 줄 유지) */
 .photo-flow { display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 6px; margin-top: 8px; }
 .photo-step { flex: 1 1 0; min-width: 0; text-align: center; }
-.photo-step figure {
+.photo-step figure,
+.photo-step-pair-imgs figure {
+  background: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border);
+  padding: 4px;
 }
-.photo-step img { width: 100%; height: 100px; object-fit: cover; display: block; }
+.photo-step img { width: 100%; height: 100px; object-fit: cover; display: block; border-radius: 6px; }
 .photo-step p { margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--ink-soft); line-height: 1.4; }
 .process-arrow { flex: 0 0 auto; width: 20px; height: 14px; color: var(--accent-dark); margin-top: 42px; }
 
 .photo-step-pair { flex: 2 1 0; }
 .photo-step-pair-imgs { display: flex; gap: 4px; }
 .photo-step-pair-imgs figure { flex: 1 1 0; min-width: 0; }
+.photo-step-pair-imgs img { width: 100%; height: 100px; object-fit: cover; display: block; border-radius: 6px; }
 
 @media (max-width: 760px) {
   .photo-flow { flex-direction: column; gap: 10px; }
