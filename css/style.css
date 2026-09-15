@@ -24,7 +24,7 @@ body {
   overflow-wrap: break-word;
 }
 
-h1, h2, h3, .logo-text, .btn-primary, .preview-link {
+h1, h2, h3, .btn-primary, .preview-link {
   font-family: "Black Han Sans", "Pretendard Variable", Pretendard, sans-serif;
 }
 
@@ -51,7 +51,7 @@ a { color: inherit; text-decoration: none; }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-mark { width: 34px; height: 34px; }
 .logo-mark svg { width: 100%; height: 100%; }
-.logo-text { font-size: 21px; font-weight: 400; letter-spacing: -0.01em; }
+.logo-text { font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif; font-size: 21px; font-weight: 500; letter-spacing: -0.01em; }
 .logo-text em { font-style: normal; font-weight: 600; color: var(--ink-soft); margin-left: 2px; }
 
 .site-nav { display: flex; gap: 32px; }
