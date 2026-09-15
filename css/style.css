@@ -198,39 +198,67 @@ a { color: inherit; text-decoration: none; }
 
 .section-about { background: var(--bg); }
 
-/* 소개 페이지 상단 서브내비 (인성 그룹 홈페이지 개요 페이지 구도 참고) */
-.about-subnav {
-  position: sticky;
-  top: 65px;
-  z-index: 40;
-  background: rgba(243, 245, 242, 0.95);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
-}
-.about-subnav-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: flex;
-  gap: 28px;
-  padding: 14px 24px;
-  overflow-x: auto;
-}
-.about-subnav a { font-size: 16px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; transition: color .15s; }
-.about-subnav a:hover { color: var(--accent-dark); }
-
-.overview-panel { padding-top: 8px; }
-.overview-eyebrow { font-size: 16px; font-weight: 700; letter-spacing: .1em; color: var(--accent); margin-bottom: 14px; }
-.overview-lead { font-size: 27px; font-weight: 700; line-height: 1.55; margin-bottom: 24px; }
+.overview-panel { padding-top: 8px; text-align: center; }
+.overview-lead { font-size: 27px; font-weight: 700; line-height: 1.55; margin: 0 auto 24px; max-width: 780px; }
 .overview-lead strong { color: var(--accent-dark); }
-.overview-panel p.overview-sub { font-size: 18px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 14px; max-width: 820px; }
+.overview-panel p.overview-sub { font-size: 18px; color: var(--ink-soft); line-height: 1.8; margin: 0 auto 14px; max-width: 720px; }
 .overview-panel p.overview-sub:last-child { margin-bottom: 0; }
 
-/* 연혁 시대구분 */
-.era-block + .era-block { margin-top: 36px; }
-.era-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px; flex-wrap: wrap; }
-.era-head h4 { font-size: 21px; font-weight: 700; color: var(--accent-dark); }
-.era-range { font-size: 15px; font-weight: 700; color: var(--ink-soft); }
-.era-block .timeline { margin-top: 12px; }
+/* 연혁: 10년 단위 구간이 좌우로 번갈아 배치되는 타임라인 */
+.decade-timeline { display: flex; flex-direction: column; gap: 64px; margin-top: 8px; }
+.decade-label { text-align: center; margin-bottom: 28px; }
+.decade-label h4 { font-size: 21px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.decade-range { font-size: 15px; font-weight: 700; color: var(--accent-dark); letter-spacing: .05em; }
+
+.decade-row { display: grid; grid-template-columns: 1fr 1fr; }
+.decade-content { display: flex; flex-direction: column; gap: 22px; max-width: 440px; }
+
+.decade-row.align-right { justify-items: start; }
+.decade-row.align-right .decade-content {
+  grid-column: 2;
+  border-left: 2px solid var(--border);
+  padding-left: 30px;
+}
+.decade-row.align-left { justify-items: end; }
+.decade-row.align-left .decade-content {
+  grid-column: 1;
+  border-right: 2px solid var(--border);
+  padding-right: 30px;
+  text-align: right;
+}
+
+.decade-entry { position: relative; }
+.decade-entry::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid var(--accent);
+}
+.decade-row.align-right .decade-entry::before { left: -36px; }
+.decade-row.align-left .decade-entry::before { right: -36px; }
+
+.decade-year { display: block; font-size: 15px; font-weight: 800; color: var(--accent-dark); margin-bottom: 4px; }
+.decade-desc { display: block; font-size: 16px; color: var(--ink); line-height: 1.55; }
+
+@media (max-width: 760px) {
+  .decade-row.align-right, .decade-row.align-left { grid-template-columns: 1fr; justify-items: stretch; }
+  .decade-row.align-right .decade-content,
+  .decade-row.align-left .decade-content {
+    grid-column: 1;
+    max-width: none;
+    border-left: 2px solid var(--border);
+    border-right: none;
+    padding-left: 26px;
+    padding-right: 0;
+    text-align: left;
+  }
+  .decade-row.align-left .decade-entry::before { left: -33px; right: auto; }
+  .decade-row.align-right .decade-entry::before { left: -33px; }
+}
 
 .panel {
   background: var(--card-bg);
@@ -243,9 +271,10 @@ a { color: inherit; text-decoration: none; }
 .subsection .panel { margin-top: 0; }
 .panel > .subsection-title { padding-left: 24px; margin-bottom: 24px; }
 
-.ceo-greeting p { font-size: 19px; color: var(--ink); line-height: 1.8; margin-bottom: 16px; }
+.ceo-section { text-align: center; }
+.ceo-greeting p { font-size: 19px; color: var(--ink); line-height: 1.8; margin: 0 auto 16px; max-width: 760px; }
 .ceo-greeting p:last-child { margin-bottom: 0; }
-.ceo-name { text-align: right; font-size: 19px; }
+.ceo-name { text-align: center; font-size: 19px; }
 .ceo-name strong { font-size: 22px; }
 
 .info-table { display: flex; flex-direction: column; }
