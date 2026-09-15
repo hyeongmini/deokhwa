@@ -22,6 +22,7 @@ body {
   line-height: 1.6;
   word-break: keep-all;
   overflow-wrap: break-word;
+  overflow-x: hidden; /* .section-band 의 100vw 풀블리드가 스크롤바 폭만큼 살짝 넘치는 것 방지 */
 }
 
 h1, h2, h3, .btn-primary, .preview-link {
@@ -196,7 +197,18 @@ a { color: inherit; text-decoration: none; }
 .section-inner { max-width: var(--max); margin: 0 auto; }
 .section-desc { color: var(--ink); font-size: 23px; font-weight: 600; line-height: 1.6; margin-bottom: 40px; }
 
-.section-about { background: var(--bg); }
+/* 소개 페이지: 개요/CEO인사말/연혁/오시는길이 흰색-기본색 밴드로 번갈아 이어짐 */
+.section-about { background: var(--bg); padding: 0; }
+.section-band {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  padding: 64px 0;
+}
+.section-band.band-white { background: var(--card-bg); }
+.section-band.band-base { background: var(--bg); }
+.section-band-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
 .overview-panel { padding-top: 8px; }
 .overview-title { text-align: center; font-size: 28px; font-weight: 700; margin-bottom: 32px; }
@@ -311,20 +323,6 @@ a { color: inherit; text-decoration: none; }
 #location .subsection-title {
   font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
   font-weight: 600;
-}
-
-/* CEO인사말/오시는길: 흰 박스 대신 좌우 풀블리드 밴드로 (상하 여백은 기존과 동일) */
-.full-bleed-band {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  background: var(--card-bg);
-}
-.full-bleed-band-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 32px 24px;
 }
 
 .ceo-section { text-align: center; }
