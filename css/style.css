@@ -465,7 +465,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- 순환상온아스콘 하이라이트 ---------- */
+/* ---------- 순환상온아스팔트 하이라이트 ---------- */
 .feature-panel {
   margin-top: 24px;
   background: var(--ink);
@@ -508,7 +508,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .feature-table td { color: #fff; font-weight: 600; }
 .feature-table td.pass { color: var(--accent); }
 
-/* 순환상온아스콘 시험결과 (EcoCold / SuperCold 비교, 세로 막대그래프 + 사진, 자체 제작) */
+/* 순환상온아스팔트 시험결과 (EcoCold / SuperCold 비교, 세로 막대그래프 + 사진, 자체 제작) */
 .test-results { margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.14); }
 .test-results-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 18px; }
 .test-results-title span { display: inline-block; margin-left: 8px; font-size: 13px; font-weight: 500; color: rgba(255,255,255,.5); }
