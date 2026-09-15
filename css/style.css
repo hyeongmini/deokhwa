@@ -465,29 +465,6 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* 아스팔트 포장의 구성: 좌측 참고 도면 / 우측 제품 카드, 반반 분할 + 높이 일치 */
-.pavement-intro { display: flex; gap: 32px; align-items: stretch; }
-.pavement-ref-photo {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: center;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-}
-.pavement-ref-photo img { width: 100%; height: auto; display: block; }
-.product-stack { flex: 1 1 50%; display: flex; flex-direction: column; gap: 16px; }
-.product-stack .product-card { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-
-@media (max-width: 760px) {
-  .pavement-intro { flex-direction: column; }
-}
-
-/* 인증현황 탭: 인증서 이미지 */
-.cert-photo { margin-bottom: 28px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
-.cert-photo img { width: 100%; height: auto; display: block; }
-
 /* ---------- 순환상온아스콘 하이라이트 ---------- */
 .feature-panel {
   margin-top: 24px;
@@ -594,48 +571,11 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .feature-table { font-size: 12px; }
 }
 
-/* ---------- 인증현황 ---------- */
-.cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.cert-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px 20px;
-}
-.cert-mark { flex-shrink: 0; width: 32px; height: 32px; color: var(--accent-dark); }
-.cert-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
-.cert-item p { font-size: 14px; color: var(--ink-soft); }
-
-@media (max-width: 640px) {
-  .cert-grid { grid-template-columns: 1fr; }
-}
 
 /* ---------- 아스팔트 포장 단면 다이어그램 (덕화실업 제공 참고 도면 기준: 포장=표층~노상, 노체는 별도) ---------- */
 .pavement-block { display: flex; gap: 32px; align-items: stretch; }
-.pavement-visual-wrap { flex: 1 1 40%; display: flex; gap: 10px; }
-.pavement-bracket-left { flex-shrink: 0; width: 26px; display: flex; align-items: flex-start; }
-.pavement-bracket-left > span {
-  height: 81%;
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 4px 0 2px;
-  border-top: 3px solid var(--accent);
-  border-bottom: 3px solid var(--accent);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px 0 0 8px;
-  writing-mode: vertical-rl;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-dark);
-  letter-spacing: .15em;
-}
 .pavement-visual {
-  flex: 1 1 auto;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   border-radius: 16px;
@@ -648,14 +588,22 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: .04em;
   text-shadow: 0 1px 3px rgba(0,0,0,.45);
   text-align: center;
 }
 .pavement-layer span em { display: block; font-style: normal; font-weight: 500; font-size: 11px; letter-spacing: normal; margin-top: 2px; opacity: .8; }
-.layer-surface { flex: 11; background: repeating-linear-gradient(135deg, #2b2b2b 0 8px, #1f1f1f 8px 16px); }
+/* 실측 두께 비율로 flex-grow 지정: 표층5 : 중간층6 : 기층15 : 보조기층40 (동상방지층·노상은 미지정이라 자연스러운 비례로) */
+.layer-surface { flex: 5; background: repeating-linear-gradient(135deg, #2b2b2b 0 8px, #1f1f1f 8px 16px); font-size: 12px; }
+.layer-binder {
+  flex: 6;
+  background: #3a332c;
+  background-image: radial-gradient(rgba(255,255,255,.08) 2px, transparent 3px);
+  background-size: 18px 18px;
+  font-size: 12px;
+}
 .layer-base {
   flex: 15;
   background: #8b8a82;
@@ -668,7 +616,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   text-shadow: 0 1px 2px rgba(255,255,255,.5);
 }
 .layer-subbase {
-  flex: 30;
+  flex: 40;
   background: #c7b48e;
   background-image:
     radial-gradient(rgba(255,255,255,.4) 4px, transparent 5px),
@@ -677,12 +625,18 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   background-position: 6px 6px, 16px 20px;
   color: #3a2f1f;
   text-shadow: 0 1px 2px rgba(255,255,255,.5);
-  font-size: 12px;
 }
-.layer-subgrade { flex: 22; background: linear-gradient(180deg, #8a6b47 0%, #6e5236 100%); }
-.layer-roadbed { flex: 18; background: linear-gradient(180deg, #5c4630 0%, #3f3020 100%); font-size: 12px; }
+.layer-frost {
+  flex: 15;
+  background: #d9c9a0;
+  background-image: radial-gradient(rgba(120,95,55,.2) 3px, transparent 4px);
+  background-size: 20px 20px;
+  color: #3a2f1f;
+  text-shadow: 0 1px 2px rgba(255,255,255,.5);
+}
+.layer-subgrade { flex: 20; background: linear-gradient(180deg, #8a6b47 0%, #6e5236 100%); }
 
-.pavement-table { flex: 1 1 60%; display: flex; flex-direction: column; gap: 10px; }
+.pavement-table { flex: 1 1 55%; display: flex; flex-direction: column; gap: 10px; }
 .pavement-row {
   flex: 1;
   background: var(--ink);
@@ -703,9 +657,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 
 @media (max-width: 860px) {
   .pavement-block { flex-direction: column; }
-  .pavement-visual-wrap { flex: none; }
   .pavement-visual { flex: none; height: 220px; flex-direction: row; }
-  .pavement-bracket-left { display: none; }
 }
 
 /* ---------- 아스콘의 종류: 5가지 단면 비교 + 개별 카드 (장성아스콘 사업영역 참고) ---------- */
