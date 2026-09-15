@@ -709,6 +709,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 }
 
 /* ---------- 아스콘 제조 공정 (원본 공정도 이미지) ---------- */
+#tab-process .section-title-plain { text-align: center; }
 .process-photo {
   max-width: 640px;
   margin: 0 auto 20px;
