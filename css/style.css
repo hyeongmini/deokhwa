@@ -708,6 +708,46 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .pavement-bracket-left { display: none; }
 }
 
+/* ---------- 아스콘의 종류: 5가지 단면 비교 + 개별 카드 (장성아스콘 사업영역 참고) ---------- */
+.comparison-panel {
+  margin-top: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+.comparison-title { font-size: 22px; font-weight: 600; color: var(--ink); margin-bottom: 20px; }
+.comparison-title span { display: block; font-size: 14px; font-weight: 500; color: var(--ink-soft); margin-top: 4px; }
+.comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.comparison-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.comparison-cell p { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.comparison-cell img { width: 100%; height: auto; display: block; }
+
+.type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+.type-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+.type-card img { width: 180px; height: 140px; object-fit: contain; background: #fff; border-radius: 10px; flex-shrink: 0; }
+.type-info { flex: 1; min-width: 0; }
+.type-info h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.type-info h4 em { display: block; font-style: normal; font-weight: 500; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+.type-info p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
+
+@media (max-width: 760px) {
+  .comparison-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .comparison-grid { grid-template-columns: 1fr; }
+  .type-grid { grid-template-columns: 1fr; }
+  .type-card img { width: 140px; height: 108px; }
+}
+
 /* ---------- 아스콘 제조 공정 (원본 공정도 이미지) ---------- */
 #tab-process .section-title-plain { text-align: center; }
 .process-photo {
