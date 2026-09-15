@@ -1,52 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300">
-  <rect x="0" y="0" width="520" height="300" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 350" width="460" height="350">
+  <rect x="0" y="0" width="460" height="350" fill="#ffffff"/>
 
   <!-- isometric box: top face + two side faces, main mixed body + thin binder base band -->
   <g stroke="#2b2320" stroke-width="2" stroke-linejoin="round">
     <!-- right face: main mixed body -->
-    <polygon points="360,100 190,140 190,250 360,210" fill="#8a7a5c"/>
+    <polygon points="305,105 175,160 175,300 305,245" fill="#8a7a5c"/>
     <!-- left face: main mixed body -->
-    <polygon points="20,100 190,140 190,250 20,210" fill="#ab9a76"/>
+    <polygon points="45,105 175,160 175,300 45,245" fill="#ab9a76"/>
     <!-- top face -->
-    <polygon points="190,60 360,100 190,140 20,100" fill="#c9b896"/>
+    <polygon points="175,50 305,105 175,160 45,105" fill="#c9b896"/>
     <!-- right face: thin binder band -->
-    <polygon points="360,210 190,250 190,272 360,232" fill="#241c15"/>
+    <polygon points="305,245 175,300 175,330 305,275" fill="#241c15"/>
     <!-- left face: thin binder band -->
-    <polygon points="20,210 190,250 190,272 20,232" fill="#332619"/>
+    <polygon points="45,245 175,300 175,330 45,275" fill="#332619"/>
   </g>
 
   <!-- aggregate speckle texture on top + side faces -->
   <g fill="#6f6248" opacity="0.55">
-    <circle cx="150" cy="86" r="3.5"/>
-    <circle cx="210" cy="80" r="3"/>
-    <circle cx="110" cy="96" r="3"/>
-    <circle cx="260" cy="92" r="3.5"/>
-    <circle cx="190" cy="102" r="2.8"/>
+    <circle cx="135" cy="80" r="4"/>
+    <circle cx="190" cy="72" r="3.5"/>
+    <circle cx="100" cy="95" r="3.5"/>
+    <circle cx="240" cy="88" r="4"/>
+    <circle cx="175" cy="105" r="3"/>
   </g>
   <g fill="#5c503a" opacity="0.5">
-    <circle cx="70" cy="130" r="3.5"/>
-    <circle cx="90" cy="165" r="3"/>
-    <circle cx="60" cy="190" r="3"/>
-    <circle cx="110" cy="150" r="3"/>
-    <circle cx="80" cy="205" r="2.8"/>
+    <circle cx="90" cy="145" r="4"/>
+    <circle cx="110" cy="190" r="3.5"/>
+    <circle cx="75" cy="220" r="3.5"/>
+    <circle cx="120" cy="165" r="3"/>
+    <circle cx="95" cy="235" r="3"/>
   </g>
   <g fill="#6b5c3f" opacity="0.5">
-    <circle cx="310" cy="128" r="3.5"/>
-    <circle cx="330" cy="163" r="3"/>
-    <circle cx="300" cy="188" r="3"/>
-    <circle cx="270" cy="148" r="3"/>
-    <circle cx="320" cy="203" r="2.8"/>
+    <circle cx="260" cy="140" r="4"/>
+    <circle cx="280" cy="185" r="3.5"/>
+    <circle cx="250" cy="215" r="3.5"/>
+    <circle cx="230" cy="160" r="3"/>
+    <circle cx="270" cy="230" r="3"/>
   </g>
 
   <!-- leader lines + labels (orange, matching sibling illustrations) -->
   <g stroke="#e0801f" stroke-width="2.5" fill="none" stroke-linecap="round">
-    <path d="M330,95 L400,72"/>
-    <path d="M330,222 L400,235"/>
+    <path d="M280,100 L345,75"/>
+    <path d="M280,262 L345,280"/>
   </g>
-  <g fill="#1a1a1a" font-family="'Malgun Gothic','Noto Sans KR',sans-serif" font-size="16" font-weight="700">
-    <text x="404" y="62">순환골재</text>
-    <text x="404" y="82">(70~80%)</text>
-    <text x="404" y="225">유화 아스팔트</text>
-    <text x="404" y="245">바인더(상온)</text>
+  <g fill="#1a1a1a" font-family="'Malgun Gothic','Noto Sans KR',sans-serif" font-size="17" font-weight="700">
+    <text x="349" y="65">순환골재</text>
+    <text x="349" y="86">(70~80%)</text>
+    <text x="349" y="270">유화 아스팔트</text>
+    <text x="349" y="291">바인더(상온)</text>
   </g>
 </svg>
