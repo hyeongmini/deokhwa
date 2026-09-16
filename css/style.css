@@ -466,7 +466,13 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 }
 
 /* ---------- 아스콘의 재료 (장성아스콘 참고): 1개씩 자동 전환 + 하단 스테퍼 ---------- */
-.material-showcase { margin-top: 24px; }
+.material-showcase {
+  margin-top: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px;
+}
 .material-layout { display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center; }
 .material-text { flex: none; width: 100%; max-width: 640px; min-width: 0; }
 .material-name {
