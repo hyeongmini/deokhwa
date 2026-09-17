@@ -137,17 +137,15 @@ a { color: inherit; text-decoration: none; }
 }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 14px 28px rgba(15,122,92,.34); }
 
-/* ---------- Page banner (subpages) - 대각선 하단 컷 + 포인트 바로 장성아스콘과 실루엣 차별화 ---------- */
+/* ---------- Page banner (subpages) - 포인트 바로 장성아스콘과 차별화 ---------- */
 .page-banner {
   position: relative;
   min-height: 260px;
-  padding-bottom: 28px;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: #fff;
   background: var(--ink);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
 }
 .page-banner .hero-bg img { object-fit: cover; object-position: center 35%; }
 .banner-accent-bar {
@@ -164,40 +162,48 @@ a { color: inherit; text-decoration: none; }
 }
 .page-banner h1 { font-size: 39px; font-weight: 400; letter-spacing: -0.01em; }
 
-/* ---------- Home preview sections ---------- */
-.preview-section {
-  position: relative;
-  min-height: 100vh;
+/* ---------- Home links: 카드형 그리드 (장성아스콘의 풀스크린 스크롤스냅 방식과 구조 차별화) ---------- */
+.home-links { padding: 100px 24px; background: var(--bg); }
+.home-links-inner { max-width: var(--max); margin: 0 auto; }
+.home-links-title { font-size: 32px; font-weight: 600; text-align: center; margin-bottom: 48px; color: var(--ink); }
+.home-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.home-link-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 22px;
   overflow: hidden;
-  color: #fff;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.preview-content {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 0 7%;
-}
-.preview-section.reverse .preview-content { text-align: right; }
-.preview-eyebrow { font-size: 17px; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 16px; }
-.preview-content h2 { font-size: 46px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 18px; color: #fff; }
-.preview-content p { font-size: 19px; color: rgba(255,255,255,.82); line-height: 1.75; margin-bottom: 28px; max-width: 560px; }
-.preview-section.reverse .preview-content p { margin-left: auto; }
+.home-link-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(15,30,25,.14); border-color: var(--accent); }
+.home-link-card figure { aspect-ratio: 16 / 9; overflow: hidden; }
+.home-link-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.home-link-card:hover img { transform: scale(1.06); }
+.home-link-body { padding: 28px 30px 32px; }
+.home-link-body .preview-eyebrow { margin-bottom: 10px; }
+.home-link-body h3 { font-size: 26px; font-weight: 600; margin-bottom: 12px; color: var(--ink); }
+.home-link-body p { font-size: 16px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 18px; }
+.preview-eyebrow { font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); }
 .preview-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-weight: 600;
-  font-size: 19px;
-  color: #fff;
+  font-size: 17px;
+  color: var(--ink);
   width: fit-content;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 4px;
   transition: color .15s;
 }
-.preview-section.reverse .preview-link { margin-left: auto; }
-.preview-link:hover { color: var(--accent); }
+.preview-link:hover { color: var(--accent-dark); }
+
+@media (max-width: 760px) {
+  .home-link-grid { grid-template-columns: 1fr; }
+  .home-links { padding: 72px 20px; }
+  .home-links-title { font-size: 26px; margin-bottom: 32px; }
+}
 
 /* ---------- Sections ---------- */
 .section { padding: 88px 24px; }
@@ -858,10 +864,6 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .value-grid { grid-template-columns: 1fr; gap: 28px; }
   .location-grid { grid-template-columns: 1fr; gap: 20px; }
   .hero h1 { font-size: 37px; }
-  .preview-content h2 { font-size: 37px; }
-  .preview-section.reverse .preview-content { text-align: left; }
-  .preview-section.reverse .preview-content p,
-  .preview-section.reverse .preview-link { margin-left: 0; }
   .location-bar-item { flex-direction: column; gap: 4px; }
   .location-bar-item strong { width: auto; }
   .location-map iframe { height: 260px; }
