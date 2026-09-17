@@ -606,7 +606,13 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   display: flex;
   align-items: center;
   padding-left: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: filter .25s ease;
 }
+.pavement-visual:hover .pavement-layer { filter: brightness(.5) saturate(.7); }
+.pavement-visual:hover .pavement-layer:hover,
+.pavement-layer:focus-visible { filter: brightness(1.15) saturate(1.05); }
 .pavement-layer span {
   display: inline-flex;
   flex-direction: column;
@@ -619,6 +625,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   font-weight: 700;
   letter-spacing: .01em;
   box-shadow: 0 4px 12px rgba(0,0,0,.22);
+  pointer-events: none;
 }
 .pavement-layer span em { display: block; font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: normal; opacity: .65; }
 /* 실측 두께 비율로 flex-grow 지정: 표층5 : 중간층6 : 기층15 : 보조기층40 (동상방지층·노상은 미지정이라 자연스러운 비례로) - 장성아스콘의 사실적 골재 질감 대신 그라데이션 톤 스케일로 차별화 */
@@ -629,24 +636,22 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .layer-frost { flex: 15; background: linear-gradient(180deg, #c7d1ba 0%, #b5c1a6 100%); }
 .layer-subgrade { flex: 20; background: linear-gradient(180deg, #8a6b47 0%, #6e5236 100%); }
 
-.pavement-table { flex: 1 1 55%; display: flex; flex-direction: column; gap: 10px; }
-.pavement-row {
-  flex: 1;
+/* 우측: 클릭/마우스오버한 층 하나만 보여주는 단일 상세 패널 (장성아스콘의 6줄 나열형 목록과 구조 자체를 차별화) */
+.pavement-detail {
+  flex: 1 1 55%;
   background: var(--ink);
-  border-radius: 18px;
-  padding: 18px 22px;
+  border-radius: 22px;
+  padding: 40px 40px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.pavement-name {
   color: #fff;
-  font-weight: 700;
-  font-size: 17px;
-  margin-bottom: 4px;
 }
-.pavement-name em { display: block; font-style: normal; font-weight: 500; font-size: 12px; color: rgba(255,255,255,.55); margin-top: 2px; }
-.pavement-desc { color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.6; }
+.pavement-detail-index { font-size: 13px; font-weight: 700; letter-spacing: .14em; color: var(--accent); margin-bottom: 16px; }
+.pavement-detail-name { font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+.pavement-detail-spec { display: block; font-size: 14px; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+.pavement-detail-desc { font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.85); }
+.pavement-detail-hint { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14); font-size: 13px; color: rgba(255,255,255,.4); }
 
 @media (max-width: 860px) {
   .pavement-block { flex-direction: column; }

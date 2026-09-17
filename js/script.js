@@ -221,3 +221,31 @@ siteNav.querySelectorAll("a").forEach((link) => {
     });
   });
 })();
+
+// 아스팔트 포장의 구성: 단면도의 층에 마우스오버/클릭 시 해당 층만 밝아지고 우측 패널에 상세 정보 표시
+(function () {
+  const visual = document.getElementById("pavementVisual");
+  if (!visual) return;
+
+  const nameEl = document.getElementById("pavementName");
+  const specEl = document.getElementById("pavementSpec");
+  const descEl = document.getElementById("pavementDesc");
+  const indexEl = document.getElementById("pavementIndex");
+  const layers = Array.from(visual.querySelectorAll(".pavement-layer"));
+
+  function render(layer, idx) {
+    nameEl.textContent = layer.dataset.name;
+    specEl.textContent = layer.dataset.spec;
+    descEl.textContent = layer.dataset.desc;
+    indexEl.textContent = String(idx + 1).padStart(2, "0") + " / " + String(layers.length).padStart(2, "0");
+  }
+
+  layers.forEach((layer, idx) => {
+    layer.addEventListener("mouseenter", () => render(layer, idx));
+    layer.addEventListener("focus", () => render(layer, idx));
+    layer.addEventListener("click", () => render(layer, idx));
+  });
+  visual.addEventListener("mouseleave", () => render(layers[0], 0));
+
+  render(layers[0], 0);
+})();

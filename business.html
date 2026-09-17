@@ -56,39 +56,32 @@
       <div class="section-band-inner">
         <h3 class="section-title-plain">아스팔트 포장의 구성</h3>
         <div class="pavement-block">
-          <div class="pavement-visual" aria-hidden="true">
-            <div class="pavement-layer layer-surface"><span>표층</span></div>
-            <div class="pavement-layer layer-binder"><span>중간층</span></div>
-            <div class="pavement-layer layer-base"><span>기층</span></div>
-            <div class="pavement-layer layer-subbase"><span>보조기층</span></div>
-            <div class="pavement-layer layer-frost"><span>동상방지층</span></div>
-            <div class="pavement-layer layer-subgrade"><span>노상</span></div>
+          <div class="pavement-visual" id="pavementVisual">
+            <div class="pavement-layer layer-surface" tabindex="0" role="button"
+              data-name="표층" data-spec="Surface Course · 5cm"
+              data-desc="밀실한 입도로 미끄럼 방지, 빗물 침투 차단. 차량 타이어가 직접 닿는 층으로 평탄성과 소음 저감 효과 우수."><span>표층</span></div>
+            <div class="pavement-layer layer-binder" tabindex="0" role="button"
+              data-name="중간층" data-spec="Binder Course · 6cm"
+              data-desc="전단응력 완화, 하중을 하부 기층에 고르게 전달. 프라임 코트·택 코트로 상·하부 층 단단히 접착."><span>중간층</span></div>
+            <div class="pavement-layer layer-base" tabindex="0" role="button"
+              data-name="기층" data-spec="Base Course · 15cm"
+              data-desc="굵은 골재 사용, 도로 전체의 휨 저항력과 하중을 지지하는 포장 구조의 뼈대."><span>기층</span></div>
+            <div class="pavement-layer layer-subbase" tabindex="0" role="button"
+              data-name="보조기층" data-spec="Subbase Course · 40cm"
+              data-desc="상부 하중을 노상으로 분산, 쇄석·자갈 층으로 지지력 확보 및 배수."><span>보조기층</span></div>
+            <div class="pavement-layer layer-frost" tabindex="0" role="button"
+              data-name="동상방지층" data-spec="Anti-Frost Layer"
+              data-desc="자갈·모래 사용, 겨울철 지반이 얼어 솟아오르는 동상 현상 차단."><span>동상방지층</span></div>
+            <div class="pavement-layer layer-subgrade" tabindex="0" role="button"
+              data-name="노상 / 원지반" data-spec="Subgrade"
+              data-desc="다져진 최하부 토사 지반, 도로의 최종 하중 지지."><span>노상</span></div>
           </div>
-          <div class="pavement-table">
-            <div class="pavement-row">
-              <div class="pavement-name">표층<em>Surface Course · 5cm</em></div>
-              <p class="pavement-desc">밀실한 입도로 미끄럼 방지, 빗물 침투 차단. 차량 타이어가 직접 닿는 층으로 평탄성과 소음 저감 효과 우수.</p>
-            </div>
-            <div class="pavement-row">
-              <div class="pavement-name">중간층<em>Binder Course · 6cm</em></div>
-              <p class="pavement-desc">전단응력 완화, 하중을 하부 기층에 고르게 전달. 프라임 코트·택 코트로 상·하부 층 단단히 접착.</p>
-            </div>
-            <div class="pavement-row">
-              <div class="pavement-name">기층<em>Base Course · 15cm</em></div>
-              <p class="pavement-desc">굵은 골재 사용, 도로 전체의 휨 저항력과 하중을 지지하는 포장 구조의 뼈대.</p>
-            </div>
-            <div class="pavement-row">
-              <div class="pavement-name">보조기층<em>Subbase Course · 40cm</em></div>
-              <p class="pavement-desc">상부 하중을 노상으로 분산, 쇄석·자갈 층으로 지지력 확보 및 배수.</p>
-            </div>
-            <div class="pavement-row">
-              <div class="pavement-name">동상방지층<em>Anti-Frost Layer</em></div>
-              <p class="pavement-desc">자갈·모래 사용, 겨울철 지반이 얼어 솟아오르는 동상 현상 차단.</p>
-            </div>
-            <div class="pavement-row">
-              <div class="pavement-name">노상 / 원지반<em>Subgrade</em></div>
-              <p class="pavement-desc">다져진 최하부 토사 지반, 도로의 최종 하중 지지.</p>
-            </div>
+          <div class="pavement-detail" id="pavementDetail">
+            <span class="pavement-detail-index" id="pavementIndex">01 / 06</span>
+            <h4 class="pavement-detail-name" id="pavementName">표층</h4>
+            <span class="pavement-detail-spec" id="pavementSpec">Surface Course · 5cm</span>
+            <p class="pavement-detail-desc" id="pavementDesc">밀실한 입도로 미끄럼 방지, 빗물 침투 차단. 차량 타이어가 직접 닿는 층으로 평탄성과 소음 저감 효과 우수.</p>
+            <p class="pavement-detail-hint">위 단면도의 각 층에 마우스를 올려보세요</p>
           </div>
         </div>
 
