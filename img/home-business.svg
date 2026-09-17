@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f7a5c"/>
+      <stop offset="100%" stop-color="#0a4a37"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g2)"/>
+  <g opacity="0.12" fill="#ffffff">
+    <circle cx="350" cy="250" r="80"/>
+    <circle cx="30" cy="30" r="60"/>
+  </g>
+  <!-- 사업영역 아이콘: 아스콘 단면 큐브 (등각) -->
+  <g stroke="#ffffff" stroke-width="4" stroke-linejoin="round" fill="none" opacity="0.95">
+    <polygon points="200,70 270,105 200,140 130,105"/>
+    <polygon points="130,105 200,140 200,210 130,175"/>
+    <polygon points="270,105 200,140 200,210 270,175"/>
+  </g>
+  <g fill="#ffffff" opacity="0.75">
+    <circle cx="165" cy="130" r="4"/>
+    <circle cx="185" cy="150" r="3"/>
+    <circle cx="150" cy="155" r="3"/>
+    <circle cx="235" cy="130" r="4"/>
+    <circle cx="215" cy="150" r="3"/>
+    <circle cx="250" cy="155" r="3"/>
+  </g>
+</svg>
