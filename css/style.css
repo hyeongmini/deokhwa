@@ -613,54 +613,28 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 15px;
+  padding-left: 20px;
+}
+.pavement-layer span {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(255,255,255,.95);
+  color: var(--ink);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: .04em;
-  text-shadow: 0 1px 3px rgba(0,0,0,.45);
-  text-align: center;
+  letter-spacing: .01em;
+  box-shadow: 0 4px 12px rgba(0,0,0,.22);
 }
-.pavement-layer span em { display: block; font-style: normal; font-weight: 500; font-size: 11px; letter-spacing: normal; margin-top: 2px; opacity: .8; }
-/* 실측 두께 비율로 flex-grow 지정: 표층5 : 중간층6 : 기층15 : 보조기층40 (동상방지층·노상은 미지정이라 자연스러운 비례로) */
-.layer-surface { flex: 5; background: repeating-linear-gradient(135deg, #2b2b2b 0 8px, #1f1f1f 8px 16px); font-size: 12px; }
-.layer-binder {
-  flex: 6;
-  background: #3a332c;
-  background-image: radial-gradient(rgba(255,255,255,.08) 2px, transparent 3px);
-  background-size: 18px 18px;
-  font-size: 12px;
-}
-.layer-base {
-  flex: 15;
-  background: #8b8a82;
-  background-image:
-    radial-gradient(rgba(255,255,255,.35) 3px, transparent 4px),
-    radial-gradient(rgba(26,26,26,.25) 3px, transparent 4px);
-  background-size: 26px 26px, 34px 34px;
-  background-position: 0 0, 14px 18px;
-  color: #2b2b2b;
-  text-shadow: 0 1px 2px rgba(255,255,255,.5);
-}
-.layer-subbase {
-  flex: 40;
-  background: #c7b48e;
-  background-image:
-    radial-gradient(rgba(255,255,255,.4) 4px, transparent 5px),
-    radial-gradient(rgba(90,70,40,.25) 3px, transparent 4px);
-  background-size: 30px 30px, 22px 22px;
-  background-position: 6px 6px, 16px 20px;
-  color: #3a2f1f;
-  text-shadow: 0 1px 2px rgba(255,255,255,.5);
-}
-.layer-frost {
-  flex: 15;
-  background: #d9c9a0;
-  background-image: radial-gradient(rgba(120,95,55,.2) 3px, transparent 4px);
-  background-size: 20px 20px;
-  color: #3a2f1f;
-  text-shadow: 0 1px 2px rgba(255,255,255,.5);
-}
+.pavement-layer span em { display: block; font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: normal; opacity: .65; }
+/* 실측 두께 비율로 flex-grow 지정: 표층5 : 중간층6 : 기층15 : 보조기층40 (동상방지층·노상은 미지정이라 자연스러운 비례로) - 장성아스콘의 사실적 골재 질감 대신 그라데이션 톤 스케일로 차별화 */
+.layer-surface { flex: 5; background: linear-gradient(180deg, #16211d 0%, #0e1815 100%); }
+.layer-binder { flex: 6; background: linear-gradient(180deg, #24352c 0%, #1a2820 100%); }
+.layer-base { flex: 15; background: linear-gradient(180deg, #4f6459 0%, #3e5147 100%); }
+.layer-subbase { flex: 40; background: linear-gradient(180deg, #93a687 0%, #7d9174 100%); }
+.layer-frost { flex: 15; background: linear-gradient(180deg, #c7d1ba 0%, #b5c1a6 100%); }
 .layer-subgrade { flex: 20; background: linear-gradient(180deg, #8a6b47 0%, #6e5236 100%); }
 
 .pavement-table { flex: 1 1 55%; display: flex; flex-direction: column; gap: 10px; }
@@ -700,7 +674,14 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .comparison-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 18px; padding: 14px; }
 .comparison-cell p { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
-.comparison-cell img { width: 100%; height: auto; display: block; }
+.comparison-cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 3px solid var(--accent);
+  filter: saturate(1.15) contrast(1.04);
+}
 
 .type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
 .type-card {
@@ -712,7 +693,16 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   border-radius: 20px;
   padding: 16px;
 }
-.type-card img { width: 180px; height: 140px; object-fit: contain; background: #fff; border-radius: 14px; flex-shrink: 0; }
+.type-card img {
+  width: 180px;
+  height: 140px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 14px;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+  filter: saturate(1.15) contrast(1.04);
+}
 .type-info { flex: 1; min-width: 0; }
 .type-info h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
 .type-info h4 em { display: block; font-style: normal; font-weight: 500; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
