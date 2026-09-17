@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 350" width="460" height="350">
+  <rect x="0" y="0" width="460" height="350" fill="#ffffff"/>
+  <g stroke="#14171a" stroke-width="2" stroke-linejoin="round">
+    <polygon points="305,105 175,160 175,300 305,245" fill="#20242a"/>
+    <polygon points="45,105 175,160 175,300 45,245" fill="#363c44"/>
+    <polygon points="175,50 305,105 175,160 45,105" fill="#2a2f35"/>
+    <polygon points="305,245 175,300 175,330 305,275" fill="#101215"/>
+    <polygon points="45,245 175,300 175,330 45,275" fill="#16191d"/>
+  </g>
+  <!-- 폴리머 그물망 패턴: 개질 아스팔트 바인더의 고분자 네트워크를 표현 -->
+  <g stroke="#e0801f" stroke-width="1.4" fill="none" opacity="0.85">
+    <path d="M110,88 L150,78 L195,90 L235,76 L270,92"/>
+    <path d="M150,78 L165,105 M195,90 L185,110 M235,76 L245,100"/>
+  </g>
+  <g fill="#e0801f" opacity="0.9">
+    <circle cx="110" cy="88" r="3"/>
+    <circle cx="150" cy="78" r="3"/>
+    <circle cx="195" cy="90" r="3"/>
+    <circle cx="235" cy="76" r="3"/>
+    <circle cx="270" cy="92" r="3"/>
+  </g>
+  <g fill="#9aa0a6" opacity="0.8">
+    <circle cx="90" cy="150" r="5"/>
+    <circle cx="115" cy="195" r="4"/>
+    <circle cx="80" cy="225" r="4"/>
+    <circle cx="125" cy="170" r="3.5"/>
+    <circle cx="100" cy="240" r="3.5"/>
+  </g>
+  <g fill="#6e747a" opacity="0.8">
+    <circle cx="255" cy="145" r="5"/>
+    <circle cx="280" cy="190" r="4"/>
+    <circle cx="245" cy="220" r="4"/>
+    <circle cx="230" cy="165" r="3.5"/>
+    <circle cx="270" cy="235" r="3.5"/>
+  </g>
+</svg>
