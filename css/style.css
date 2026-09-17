@@ -511,12 +511,12 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 }
 .material-diagram { display: flex; align-items: center; gap: 56px; }
 
-/* 다이어그램: 340x340 고정 캔버스에 중앙(완성품)+동서남북(재료) 배치, 연결선은 절대좌표 계산값 */
+/* 다이어그램: 400x400 고정 캔버스에 중앙(완성품)+동서남북(재료) 배치, 연결선은 절대좌표 계산값 (호버 확대시 겹침 방지를 위해 간격 확장) */
 .material-diagram-visual {
   position: relative;
-  flex: 0 0 340px;
-  width: 340px;
-  height: 340px;
+  flex: 0 0 400px;
+  width: 400px;
+  height: 436px;
 }
 .material-line {
   position: absolute;
@@ -524,10 +524,10 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   z-index: 0;
   transition: background-color .2s ease;
 }
-.line-top { left: 168.5px; top: 92px; width: 3px; height: 23px; }
-.line-bottom { left: 168.5px; top: 225px; width: 3px; height: 23px; }
-.line-left { left: 92px; top: 168.5px; width: 23px; height: 3px; }
-.line-right { left: 225px; top: 168.5px; width: 23px; height: 3px; }
+.line-top { left: 198.5px; top: 100px; width: 3px; height: 45px; }
+.line-bottom { left: 198.5px; top: 255px; width: 3px; height: 45px; }
+.line-left { left: 100px; top: 198.5px; width: 45px; height: 3px; }
+.line-right { left: 255px; top: 198.5px; width: 45px; height: 3px; }
 
 .material-node {
   position: absolute;
@@ -541,7 +541,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
 }
 .material-node img {
   display: block;
@@ -556,12 +556,12 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   color: var(--ink-soft);
   transition: color .2s ease;
 }
-.material-node-center { top: 115px; left: 115px; }
+.material-node-center { top: 145px; left: 145px; }
 .material-node-center img { width: 110px; height: 110px; border-radius: 20px; }
-.material-node-top { top: 0; left: 50%; transform: translateX(-50%); }
-.material-node-bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
-.material-node-left { left: 0; top: 50%; transform: translateY(-50%); }
-.material-node-right { right: 0; top: 50%; transform: translateY(-50%); }
+.material-node-top { top: 8px; left: 50%; transform: translateX(-50%); }
+.material-node-bottom { top: 300px; left: 50%; transform: translateX(-50%); }
+.material-node-left { left: 8px; top: 154px; }
+.material-node-right { right: 8px; top: 154px; }
 .material-node-top img,
 .material-node-bottom img,
 .material-node-left img,
