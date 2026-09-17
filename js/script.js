@@ -249,3 +249,19 @@ siteNav.querySelectorAll("a").forEach((link) => {
 
   render(layers[0], 0);
 })();
+
+// 메인화면 히어로 배경: 3장 슬라이드 자동 전환(크로스페이드, 5초 간격)
+(function () {
+  const slideshow = document.getElementById("heroSlideshow");
+  if (!slideshow) return;
+
+  const slides = Array.from(slideshow.querySelectorAll("img"));
+  if (slides.length < 2) return;
+
+  let current = 0;
+  window.setInterval(() => {
+    slides[current].classList.remove("is-active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("is-active");
+  }, 5000);
+})();
