@@ -159,17 +159,39 @@
 
       <h3 class="section-title-plain pavement-title-lg">아스콘의 재료</h3>
       <div class="material-showcase" id="materialShowcase">
-        <div class="material-layout">
+        <div class="material-diagram">
+          <div class="material-diagram-visual" id="materialVisual">
+            <span class="material-line line-top"></span>
+            <span class="material-line line-bottom"></span>
+            <span class="material-line line-left"></span>
+            <span class="material-line line-right"></span>
+
+            <button type="button" class="material-node material-node-center" data-material="asphalt">
+              <img src="img/materials/asphalt.jpg" alt="아스팔트">
+            </button>
+            <button type="button" class="material-node material-node-top" data-material="binder">
+              <img src="img/materials/binder.jpg" alt="아스팔트 바인더">
+              <span class="material-node-label">아스팔트 바인더</span>
+            </button>
+            <button type="button" class="material-node material-node-bottom" data-material="filler">
+              <img src="img/materials/filler.jpg" alt="채움재">
+              <span class="material-node-label">채움재</span>
+            </button>
+            <button type="button" class="material-node material-node-left" data-material="coarse">
+              <img src="img/materials/coarse-aggregate.jpg" alt="굵은 골재">
+              <span class="material-node-label">굵은 골재</span>
+            </button>
+            <button type="button" class="material-node material-node-right" data-material="fine">
+              <img src="img/materials/fine-aggregate.jpg" alt="잔골재">
+              <span class="material-node-label">잔골재</span>
+            </button>
+          </div>
           <div class="material-text">
             <h4 class="material-name" id="materialName"></h4>
             <p class="material-desc" id="materialDesc"></p>
             <div class="material-extra" id="materialExtra"></div>
           </div>
-          <figure class="material-photo">
-            <img id="materialImg" src="" alt="">
-          </figure>
         </div>
-        <div class="material-stepper" id="materialStepper" role="tablist" aria-label="아스콘 재료 선택"></div>
       </div>
       </div>
     </div>

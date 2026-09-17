@@ -478,7 +478,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- 아스콘의 재료 (장성아스콘 참고): 1개씩 자동 전환 + 하단 스테퍼 ---------- */
+/* ---------- 아스콘의 재료: 완성품(중앙)-재료(동서남북) 다이어그램, 마우스오버로 설명 전환 ---------- */
 .material-showcase {
   margin-top: 24px;
   background: var(--card-bg);
@@ -486,16 +486,77 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   border-radius: 22px;
   padding: 36px;
 }
-.material-layout { display: flex; align-items: center; gap: 48px; }
+.material-diagram { display: flex; align-items: center; gap: 56px; }
+
+/* 다이어그램: 340x340 고정 캔버스에 중앙(완성품)+동서남북(재료) 배치, 연결선은 절대좌표 계산값 */
+.material-diagram-visual {
+  position: relative;
+  flex: 0 0 340px;
+  width: 340px;
+  height: 340px;
+}
+.material-line {
+  position: absolute;
+  background: var(--border);
+  z-index: 0;
+  transition: background-color .2s ease;
+}
+.line-top { left: 168.5px; top: 92px; width: 3px; height: 23px; }
+.line-bottom { left: 168.5px; top: 225px; width: 3px; height: 23px; }
+.line-left { left: 92px; top: 168.5px; width: 23px; height: 3px; }
+.line-right { left: 225px; top: 168.5px; width: 23px; height: 3px; }
+
+.material-node {
+  position: absolute;
+  z-index: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.material-node img {
+  display: block;
+  object-fit: cover;
+  border: 3px solid var(--card-bg);
+  box-shadow: 0 6px 16px rgba(15,30,25,.18);
+  transition: filter .25s ease, transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.material-node-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: color .2s ease;
+}
+.material-node-center { top: 115px; left: 115px; }
+.material-node-center img { width: 110px; height: 110px; border-radius: 20px; }
+.material-node-top { top: 0; left: 50%; transform: translateX(-50%); }
+.material-node-bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+.material-node-left { left: 0; top: 50%; transform: translateY(-50%); }
+.material-node-right { right: 0; top: 50%; transform: translateY(-50%); }
+.material-node-top img,
+.material-node-bottom img,
+.material-node-left img,
+.material-node-right img { width: 92px; height: 92px; border-radius: 50%; }
+
+/* 활성/비활성 강조: 활성 노드는 확대+포인트컬러 링, 나머지는 흑백으로 가라앉힘 */
+.material-node.is-active img { border-color: var(--accent); transform: scale(1.08); box-shadow: 0 10px 26px rgba(15,122,92,.4); }
+.material-node.is-active .material-node-label { color: var(--accent-dark); font-weight: 700; }
+.material-node.is-dimmed img { filter: grayscale(75%) brightness(.72); }
+.material-node.is-dimmed .material-node-label { color: var(--border); }
+
 .material-text { flex: 1 1 45%; min-width: 0; }
 .material-name {
   font-size: 30px;
   font-weight: 700;
   color: var(--accent-dark);
   margin-bottom: 16px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .4s ease, transform .4s ease;
+  transition: opacity .2s ease;
 }
 .material-desc {
   font-size: 16px;
@@ -503,11 +564,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   color: var(--ink-soft);
   margin-bottom: 14px;
   min-height: 1.7em;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity .4s ease, transform .4s ease;
 }
-.material-extra { opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
 .material-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .material-points li {
   position: relative;
@@ -526,76 +583,11 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   border-radius: 50%;
   background: var(--accent);
 }
-.material-showcase.is-visible .material-name,
-.material-showcase.is-visible .material-desc,
-.material-showcase.is-visible .material-extra { opacity: 1; transform: none; }
-
-/* 아스팔트(완성품) 인트로 슬라이드: 4가지 재료를 원형 썸네일로 미리보기 */
-.material-circles { display: flex; flex-wrap: wrap; gap: 22px; }
-.material-circle-item {
-  appearance: none;
-  -webkit-appearance: none;
-  background: none;
-  border: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  width: 84px;
-}
-.material-circle {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--border);
-  transition: border-color .25s ease, transform .25s ease;
-}
-.material-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.material-circle-item:hover .material-circle { border-color: var(--accent); transform: translateY(-3px); }
-.material-circle-label { font-size: 13px; color: var(--ink-soft); text-align: center; line-height: 1.4; }
-
-.material-photo {
-  flex: 1 1 55%;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(15,30,25,.14);
-  aspect-ratio: 3 / 2;
-}
-.material-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0;
-  transition: opacity .5s ease;
-}
-.material-photo img.is-visible { opacity: 1; }
-
-.material-stepper { display: flex; align-items: center; justify-content: center; gap: 0; margin-top: 40px; }
-.material-dot {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background-color: var(--border);
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background-color .3s ease, transform .3s ease;
-}
-.material-dot.active { background-color: var(--accent); transform: scale(1.25); }
-.material-dot-line { width: 44px; height: 2px; background: var(--border); flex-shrink: 0; }
 
 @media (max-width: 860px) {
-  .material-layout { flex-direction: column-reverse; gap: 24px; }
+  .material-diagram { flex-direction: column; gap: 32px; }
+  .material-diagram-visual { flex: none; }
   .material-text { flex: none; width: 100%; }
-  .material-photo { flex: none; width: 100%; }
-  .material-dot-line { width: 24px; }
 }
 
 
