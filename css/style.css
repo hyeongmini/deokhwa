@@ -97,6 +97,7 @@ a { color: inherit; text-decoration: none; }
   transition: opacity 1.4s ease;
 }
 .hero-slideshow img.is-active { opacity: 1; }
+.hero-slideshow img[src*="hero-plant-sign"] { object-position: center 15%; }
 
 .hero-overlay {
   position: absolute;
@@ -651,13 +652,10 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   pointer-events: none;
 }
 .pavement-layer span em { display: block; font-style: normal; font-weight: 500; font-size: 10px; letter-spacing: normal; opacity: .65; }
-/* 실측 두께 비율로 flex-grow 지정: 표층5 : 중간층6 : 기층15 : 보조기층40 (동상방지층·노상은 미지정이라 자연스러운 비례로) - 장성아스콘의 사실적 골재 질감 대신 그라데이션 톤 스케일로 차별화 */
+/* 실측 두께 비율로 flex-grow 지정: 표층5 : 중간층6 : 기층15 - 장성아스콘의 사실적 골재 질감 대신 그라데이션 톤 스케일로 차별화 */
 .layer-surface { flex: 5; background: linear-gradient(180deg, #16211d 0%, #0e1815 100%); }
 .layer-binder { flex: 6; background: linear-gradient(180deg, #24352c 0%, #1a2820 100%); }
 .layer-base { flex: 15; background: linear-gradient(180deg, #4f6459 0%, #3e5147 100%); }
-.layer-subbase { flex: 40; background: linear-gradient(180deg, #93a687 0%, #7d9174 100%); }
-.layer-frost { flex: 15; background: linear-gradient(180deg, #c7d1ba 0%, #b5c1a6 100%); }
-.layer-subgrade { flex: 20; background: linear-gradient(180deg, #8a6b47 0%, #6e5236 100%); }
 
 /* 우측: 클릭/마우스오버한 층 하나만 보여주는 단일 상세 패널 (장성아스콘의 6줄 나열형 목록과 구조 자체를 차별화) */
 .pavement-detail {
